@@ -1,0 +1,36 @@
+<!-- index.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Iniciar Sesión</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Botón Registrar en la esquina superior derecha -->
+    <header>
+        <a href="/registro" class="btn-register">Registrar</a>
+    </header>
+
+    <h1>Argos</h1>
+    <h3>Iniciar Sesión</h3>
+
+    <!-- Contenedor para mostrar alertas -->
+    <div id="alert" class="alert" style="display: none;"></div>
+
+    <!-- Formulario de inicio de sesión -->
+    <form id="formLogin">
+        <input type="email" id="loginEmail" placeholder="Correo electrónico" required>
+        
+        <!-- Campo de contraseña con ícono para mostrar/ocultar -->
+        <div class="password-container">
+            <input type="password" id="loginPassword" placeholder="Contraseña" required>
+            <span id="togglePassword" class="toggle-password">👁️</span>
+        </div>
+
+        <button type="submit" class="btn-login">Ingresar</button>
+    </form>
+
+    <script src="/js/auth.js"></script>
+</body>
+</html>

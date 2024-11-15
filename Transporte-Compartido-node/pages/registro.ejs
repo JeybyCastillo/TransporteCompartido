@@ -1,0 +1,30 @@
+<!-- pages/registro.ejs -->
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <title>Registro de Usuario</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <!-- Botón Registrar en la esquina superior derecha (opcional, dependiendo de la navegación) -->
+    <header>
+        <a href="/" class="btn-login">Iniciar Sesión</a>
+    </header>
+
+    <h1>Registro de Usuario</h1>
+
+    <!-- Contenedor para mostrar alertas -->
+    <div id="alert" class="alert" style="display: none;"></div>
+
+    <!-- Formulario de registro -->
+    <form id="formRegistro">
+        <input type="text" id="nombre" placeholder="Nombre" required>
+        <input type="email" id="email" placeholder="Correo electrónico" required>
+        <input type="password" id="password" placeholder="Contraseña" required>
+        <button type="submit" class="btn-nuevo">Registrar</button>
+    </form>
+
+    <script src="/js/auth.js"></script>
+</body>
+</html>

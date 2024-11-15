@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Rutas de Viaje</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="encabezado">
+    <nav>
+      <ul class="menu">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/rutas">Rutas de viaje</a></li>
+        <li><a href="/perfil">Perfil</a></li>
+      </ul>
+    </nav>
+    <a href="/" class="btn-close">Cerrar Sesión</a>
+  </header>
+  
+ 
+<div class="container">
+  <!-- Contenedor del mapa -->
+  <div class="map-container">
+    <!-- Mapa de Google Maps embebido -->
+    <div class="mapouter">
+      <div class="gmap_canvas">
+        <iframe class="gmap_iframe" width="100%" height="400" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" 
+          src="https://maps.google.com/maps?width=600&amp;height=400&amp;hl=en&amp;q=El%20Salvador&amp;t=&amp;z=14&amp;ie=UTF8&amp;iwloc=B&amp;output=embed">
+        </iframe>
+      </div>
+    </div>
+  </div>
+
+  <!-- Formulario para Dirección -->
+  <div id="form-container">
+    <form id="direccion-form">
+        <h1>Rutas de Viaje</h1>
+        <div>
+        <label for="direccion">Dirección:</label>
+        <input type="text" id="direccion" name="direccion" placeholder="Ingrese la dirección" required>
+      </div>
+      <button type="submit" class="btn">Buscar Ruta</button>
+    </form>
+  </div>
+</div>
+
+ <!-- Contenedor para el Formulario de Viaje y la Tabla -->
+ <div class="viaje-container" id="viaje-container">
+    <!-- Formulario de Viaje -->
+    <div class="form-viaje" id="form-viaje">
+      <form id="viaje-form" class="viaje-form">
+        <div class="form-group">
+          <label for="nombre">Nombre del Usuario:</label>
+          <input type="text" id="nombre" name="nombre" required>
+        </div>
+        <div class="form-group">
+          <label for="destino">Destino:</label>
+          <input type="text" id="destino" name="destino" required>
+        </div>
+        <div class="form-group">
+          <label for="punto-de-encuentro">Punto de Encuentro:</label>
+          <input type="text" id="punto-de-encuentro" name="punto-de-encuentro" required>
+        </div>
+        <div class="form-group">
+          <label for="fecha">Fecha de Viaje:</label>
+          <input type="date" id="fecha" name="fecha" required>
+        </div>
+        <div class="form-group">
+          <label for="capacidad">Capacidad:</label>
+          <input type="number" id="capacidad" name="capacidad" required>
+        </div>
+        <div class="form-group">
+          <label for="costo">Costo:</label>
+          <input type="number" id="costo" name="costo" required>
+        </div>
+        <button type="submit" class="btn-submit">Agregar Viaje</button>
+      </form>
+    </div>
+
+    <!-- Tabla de Viajes -->
+    <div class="table-viaje" id="table-viaje">
+      <h2>Viajes Programados</h2>
+      <table id="viajes-table" class="viajes-table">
+        <thead>
+          <tr>
+            <th>Nombre del Usuario</th>
+            <th>Destino</th>
+            <th>Punto de Encuentro</th>
+            <th>Fecha</th>
+            <th>Capacidad</th>
+            <th>Costo</th>
+            <th>Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Las filas de la tabla se llenarán dinámicamente -->
+        </tbody>
+      </table>
+    </div>
+  </div>
+
+
+  <script src="/js/auth.js"></script>
+</body>
+</html>

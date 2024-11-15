@@ -1,0 +1,710 @@
+/* public/css/styles.css */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background: url('/images/1.jpg') no-repeat center center fixed;
+    background-size: cover; /* Esto hace que la imagen de fondo cubra toda la pantalla */
+    color: white; /* Cambia el color del texto a blanco para mayor contraste */
+    flex-direction: column; /* Organiza los elementos en columna */
+    padding: 20px; /* Añade algo de espacio alrededor */
+}
+
+header {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+}
+
+h1 {
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+form {
+    background-color: rgba(10, 10, 10, 0.8); /* Fondo blanco semitransparente para que se vea el fondo */
+    padding: 2rem;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+    margin-top: 20px; /* Separación del título */
+}
+
+* Estilos para el botón Registrar */
+.btn-register {
+    background-color: #28a745;
+    color: white;
+    padding: 10px 20px;
+    font-size: 1rem;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.btn-register:hover {
+    background-color: #218838;
+}
+
+/* Estilos para el título */
+h1 {
+    color: #fff;
+    margin-bottom: 1rem;
+    text-align: center;
+}
+
+h3 {
+    margin-top: 1rem;
+    text-align: center;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"] {
+    width: 100%;
+    padding: 0.75rem;
+    margin: 0.5rem 0;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Estilos para el botón de Iniciar Sesión */
+.btn-login {
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    width: 100%;
+    padding: 0.75rem;
+    background-color: #712e8154;
+    border: none;
+    border-radius: 4px;
+    color: #fff;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    font-weight: bold;
+}
+
+.btn-login:hover {
+    background-color: #ca76d1;
+    color:#1a1717;
+}
+
+.btn-login:active {
+    background-color: #80005a;
+}
+
+.btn-login:focus,
+input:focus {
+    outline: none;
+    border-color: #007bff;
+}
+
+/* Botón de registro en la esquina superior derecha */
+.btn-register {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    background-color: #40af77a8;;
+    color:#fff;
+    border: none;
+    padding: 10px 15px;
+    font-size: 1rem;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.btn-register:hover {
+    background-color: #60ac77;
+    color: rgb(17, 17, 17);;
+}
+
+
+/* Estilos para el contenedor de alertas */
+.alert {
+    width: 100%;
+    max-width: 400px;
+    padding: 10px;
+    margin-bottom: 1rem;
+    text-align: center;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+/* Alerta de éxito */
+.alert-success {
+    background-color: #28a745;
+    color: white;
+}
+
+/* Alerta de error */
+.alert-error {
+    background-color: #dc3545;
+    color: white;
+}
+
+/* Contenedor de la contraseña con ícono */
+.password-container {
+    position: relative;
+}
+
+.password-container input[type="password"],
+.password-container input[type="text"] {
+    width: 100%;
+    padding-right: 2.5rem;
+}
+
+.toggle-password {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #007bff;
+    font-size: 1.2rem;
+}
+
+/* boton de registro de nuevo usuario */
+
+.btn-nuevo {
+    width: 100%; /* Ocupa el ancho completo del formulario */
+    padding: 0.75rem;
+    background-color: #0f6875; /* Color azul claro para diferenciarlo */
+    border: none;
+    border-radius: 4px;
+    color: #080808;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s;
+    margin-top: 1rem; /* Espacio superior para separarlo de los campos de entrada */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    font-weight: bold;
+}
+
+.btn-nuevo:hover {
+    background-color: #0a3c44; /* Color más oscuro al pasar el mouse */
+    color: #fff;
+}
+
+.btn-nuevo:active {
+    background-color: #117a8b; /* Color cuando el botón es presionado */
+}
+
+
+/* Estilos generales para el encabezado */
+
+.encabezado {
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para el header */
+    padding: 20px 30px; /* Añadir relleno alrededor del contenido */
+    position: fixed; /* Fijar el encabezado en la parte superior */
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 10; /* Asegurar que el encabezado esté por encima de otros elementos */
+   
+}
+
+/* Menú de navegación */
+.encabezado nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.encabezado .menu {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+}
+
+.encabezado .menu li {
+    margin: 0 15px;
+}
+
+.encabezado .menu a {
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    padding: 10px 20px;
+    display: block;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.encabezado .menu a:hover {
+    background-color: rgba(255, 255, 255, 0.2);
+    color: #FFD700;
+    border-radius: 5px;
+}
+
+/* Botón de Cerrar sesión */
+.btn-close {
+    background: #ffffff; /* Color de fondo */
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    color: #4741d7; /* Color del texto */
+    border: 2px solid #4741d7; /* Borde con color */
+    padding: 16px 20px;
+    border-radius: 27px; /* Bordes redondeados */
+    position: absolute; /* Posición en la esquina superior derecha */
+    top: 20px;
+    right: 20px;
+    z-index: 1;
+    overflow: hidden;
+    display: inline-block;
+    font-size: 16px;
+    font-weight: bold;
+    text-decoration: none;
+    transition: color 0.3s ease, background 0.3s ease;
+}
+
+.btn-close:hover {
+    color: #ffffff; /* Color del texto en hover */
+    background-color: #4741d7; /* Fondo en hover */
+}
+
+.btn-close::after {
+    content: "";
+    background: #4741d7; /* Fondo del hover */
+    position: absolute;
+    z-index: -1;
+    padding: 16px 20px;
+    display: block;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    transform: scale(0, 0) rotate(-180deg);
+    transition: all 0.3s ease;
+}
+
+.btn-close:hover::after {
+    transition: all 0.3s ease-out;
+    transform: scale(1, 1) rotate(0deg); /* Efecto de expansión y rotación */
+}
+
+
+/* Ajustar el contenido del sitio para que no quede cubierto por el menú fijo */
+main {
+    padding-top: 60px; /* Asegura que el contenido no quede debajo de la barra fija */
+}
+
+
+/* Estilos del contenedor principal de PERFIL */
+.profile-container {
+    display: flex;
+    gap: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: rgba(0, 0, 0, 0.7); 
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+}
+
+/* Imagen de perfil */
+.profile-image-container {
+    position: relative;
+    width: 300px;
+    height: auto;
+    overflow: hidden;
+}
+
+.profile-image-container img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.image-upload-label {
+    cursor: pointer;
+}
+
+#profile-image-upload {
+    display: none;
+}
+
+/* Información del perfil */
+.profile-info {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-size: 16px;
+}
+
+.editable-field {
+    background-color: transparent;
+    padding: 5px;
+    border: none transparent; /* Elimina el borde */
+    border-style: none;
+    outline:  none; /* Elimina el borde cuando el campo está enfocado */
+    appearance: none;
+    width: 100%;
+    color: white;
+    max-width: 200px;
+    font-size: 14px;
+}
+
+/* Botón de mensaje */
+:root {
+    --white: #ececec;
+    --black: #333333;
+    --yellow: #ffff00;
+    --purple: #8a19ff;
+    --colorPrimary: var(--yellow);
+    --colorSecondary: var(--purple);
+  }
+  
+/* Estilo de botón dividido */
+.message-btn {
+    position: relative;
+    letter-spacing: 0.25em;
+    padding: 1rem 2.5rem;
+    background: transparent;
+    outline: none;
+    font-size: 28px;
+    color: var(--white);
+    cursor: pointer;
+    border: none;
+    font-weight: bold;
+  }
+  
+  .message-btn:hover{
+    color: var(--black);
+  }
+
+  .message-btn::after,
+  .message-btn::before {
+    content: "";
+    position: absolute;
+    height: 100%;
+    width: 50%;
+    transform: skewX(30deg);
+    transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    z-index: -2;
+  }
+  
+  .message-btn::before {
+    background-color: var(--colorPrimary);
+    top: -1rem;
+    left: 0rem;
+  }
+  
+  .message-btn::after {
+    background-color: var(--colorSecondary);
+    top: 1rem;
+    left: 8rem;
+  }
+  
+  .message-btn:hover::before,
+  .message-btn:hover::after {
+    top: 0;
+    transform: skewX(0deg);
+  }
+  
+  .message-btn:hover::after {
+    left: 0rem;
+  }
+  
+  .message-btn:hover::before {
+    left: 8.75rem;
+  }
+
+/* Redes sociales */
+.social-links a {
+    text-decoration: none;
+    color: #161616;
+    font-weight: bold;
+    margin-right: 10px;
+}
+
+.social-links a:hover {
+    text-decoration: underline;
+}
+
+/* Botones de redes sociales */
+.social-links {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+.social-btn {
+    color: rgb(5, 5, 5);
+    background-color: #3b5998; /* Color de fondo para Facebook */
+    padding: 10px 15px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 14px;
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.social-btn i {
+    font-size: 16px;
+}
+
+.social-btn:hover {
+    background-color: #1d305f; /* Color más oscuro para hover */
+}
+
+.social-btn:nth-child(2) {
+    background-color: #E1306C; /* Color de fondo para Instagram */
+}
+
+.social-btn:nth-child(2):hover {
+    background-color: #a3204e; /* Color más oscuro para hover en Instagram */
+}
+
+/*estilos para rutas de VIAJES*/
+
+  
+  /* Estilos generales del contenedor */
+.container {
+    display: flex;
+    width: 80%;
+    justify-content: space-between;
+    gap: 20px;
+    margin: 20px;
+    padding-top: 35%;
+  }
+
+  /* Estilo para el contenedor del mapa */
+.map-container {
+    width: 60%;
+    height: 400px;
+  }
+
+  /* Estilos del mapa de Google */
+  .mapouter {
+    position: relative;
+    text-align: right;
+    width: 100%;
+    height: 400px;
+  }
+  
+  .gmap_canvas {
+    overflow: hidden;
+    background: none!important;
+    width: 100%;
+    height: 400px;
+  }
+  
+  .gmap_iframe {
+    height: 400px!important;
+  }
+  
+  /* Estilos del formulario */
+  #form-container {
+    width: 700px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 20px;
+    border: 1px solid transparent;
+    border-radius: 8px;
+    background-color: transparent;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  }
+  
+  #form-container form {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  #form-container div {
+    margin-bottom: 15px;
+  }
+  
+  #form-container label {
+    font-weight: bold;
+    margin-bottom: 5px;
+  }
+  
+  input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+  }
+  
+  #form-container button{
+    cursor: pointer;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+    position: relative;
+    padding: 10px 20px;
+    background: rgb(23, 105, 87);
+    font-size: 20px;
+    border-top-right-radius: 10px;
+    border-bottom-left-radius: 10px;
+    transition: all 1s;
+    color: white;
+  }
+  
+  #form-container button:after,
+  #form-container button:before {
+    content: " ";
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    border: 0px solid #fff;
+    transition: all 1s;
+  }
+  
+  #form-container button:after {
+    top: -1px;
+    left: -1px;
+    border-top: 5px solid black;
+    border-left: 5px solid black;
+  }
+  
+  #form-container button:before {
+    bottom: -1px;
+    right: -1px;
+    border-bottom: 5px solid black;
+    border-right: 5px solid black;
+  }
+  
+  /* Efecto al pasar el cursor sobre el botón */
+  #form-container button:hover {
+    border-top-right-radius: 0px;
+    border-bottom-left-radius: 0px;
+    background: rgba(0, 0, 0, 0.863); /* Fondo más oscuro */
+    color: rgb(255, 255, 255); /* Cambiar el color del texto */
+  }
+  
+  #form-container button:hover:before,
+  #form-container button:hover:after {
+    width: 100%;
+    height: 100%;
+    border-color: white; /* Cambiar el color de las esquinas */
+  }
+
+
+/* Estilos para el contenedor del formulario */
+ .viaje-container {
+    margin: 2%;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0.7);
+    display: flex;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    width: 85%;
+    padding: 20px;
+    gap: 2%;
+  }
+  
+  .form-viaje{
+    width: 30%;
+  }
+  .form-group {
+    margin-bottom: 15px;
+
+  }
+  
+  .form-group label {
+    font-size: 16px;
+    display: block;
+  }
+  
+  .form-group input {
+    width: 100%;
+    padding: 10px;
+    margin-top: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+  }
+  
+  .btn-submit {
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .btn-submit:hover {
+    background-color: #45a049;
+  }
+  
+  /* Estilos para la tabla */
+  .viajes-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  .viajes-table th, .viajes-table td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  .viajes-table th {
+    background-color: #181818;
+  }
+  
+
+
+
+/* Medias Query para pantallas más pequeñas */
+@media (max-width: 768px) {
+    body {
+        padding: 10px; /* Reducir el padding en pantallas más pequeñas */
+    }
+
+    h1,h3 {
+        font-size: 1.5rem; /* Ajustar el tamaño del título */
+    }
+
+    form {
+        padding: 1.5rem; /* Reducir el padding del formulario */
+    }
+
+    #registrar {
+        font-size: 0.9rem; /* Reducir el tamaño del botón */
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        padding: 5px;
+    }
+
+    h1 {
+        font-size: 1.2rem;
+    }
+
+    form {
+        width: 100%; /* El formulario ocupará toda la pantalla en móviles */
+        max-width: 100%;
+        padding: 1rem;
+    }
+
+    #registrar {
+        font-size: 0.8rem;
+        top: 5px;
+        right: 5px;
+    }
+}
