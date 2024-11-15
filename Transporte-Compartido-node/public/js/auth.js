@@ -102,9 +102,6 @@ document.getElementById('formLogin').addEventListener('submit', function (e) {
 });
 
 
-
-
-
 //EVENTOS DE LA PAGINA PERFIL 
 // Muestra una vista previa de la imagen seleccionada
 function previewImage(event) {

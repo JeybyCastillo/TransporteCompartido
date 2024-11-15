@@ -13,10 +13,10 @@ body {
     align-items: center;
     height: 100vh;
     background: url('/images/1.jpg') no-repeat center center fixed;
-    background-size: cover; /* Esto hace que la imagen de fondo cubra toda la pantalla */
-    color: white; /* Cambia el color del texto a blanco para mayor contraste */
-    flex-direction: column; /* Organiza los elementos en columna */
-    padding: 20px; /* Añade algo de espacio alrededor */
+    background-size: cover; 
+    color: white; 
+    flex-direction: column; 
+    padding: 20px; 
 }
 
 header {
@@ -32,16 +32,16 @@ h1 {
 }
 
 form {
-    background-color: rgba(10, 10, 10, 0.8); /* Fondo blanco semitransparente para que se vea el fondo */
+    background-color: rgba(10, 10, 10, 0.8); 
     padding: 2rem;
     border-radius: 8px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
-    margin-top: 20px; /* Separación del título */
+    margin-top: 20px; 
 }
 
-* Estilos para el botón Registrar */
+/* Estilos para el botón Registrar */
 .btn-register {
     background-color: #28a745;
     color: white;
@@ -179,40 +179,39 @@ input:focus {
 /* boton de registro de nuevo usuario */
 
 .btn-nuevo {
-    width: 100%; /* Ocupa el ancho completo del formulario */
+    width: 100%; 
     padding: 0.75rem;
-    background-color: #0f6875; /* Color azul claro para diferenciarlo */
+    background-color: #0f6875; 
     border: none;
     border-radius: 4px;
     color: #080808;
     font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
-    margin-top: 1rem; /* Espacio superior para separarlo de los campos de entrada */
+    margin-top: 1rem; 
     font-family: Georgia, 'Times New Roman', Times, serif;
     font-weight: bold;
 }
 
 .btn-nuevo:hover {
-    background-color: #0a3c44; /* Color más oscuro al pasar el mouse */
+    background-color: #0a3c44; 
     color: #fff;
 }
 
 .btn-nuevo:active {
-    background-color: #117a8b; /* Color cuando el botón es presionado */
+    background-color: #117a8b; 
 }
 
 
 /* Estilos generales para el encabezado */
 
 .encabezado {
-    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para el header */
-    padding: 20px 30px; /* Añadir relleno alrededor del contenido */
-    position: fixed; /* Fijar el encabezado en la parte superior */
-    top: 0;
+    background-color: rgba(0, 0, 0, 0.7); 
+    padding: 20px 30px; 
+    position: fixed; 
     left: 0;
     width: 100%;
-    z-index: 10; /* Asegurar que el encabezado esté por encima de otros elementos */
+    z-index: 10; 
    
 }
 
@@ -250,13 +249,13 @@ input:focus {
 
 /* Botón de Cerrar sesión */
 .btn-close {
-    background: #ffffff; /* Color de fondo */
+    background: #ffffff;
     font-family: Georgia, 'Times New Roman', Times, serif;
-    color: #4741d7; /* Color del texto */
-    border: 2px solid #4741d7; /* Borde con color */
+    color: #4741d7; 
+    border: 2px solid #4741d7; 
     padding: 16px 20px;
-    border-radius: 27px; /* Bordes redondeados */
-    position: absolute; /* Posición en la esquina superior derecha */
+    border-radius: 27px; 
+    position: absolute; 
     top: 20px;
     right: 20px;
     z-index: 1;
@@ -269,13 +268,13 @@ input:focus {
 }
 
 .btn-close:hover {
-    color: #ffffff; /* Color del texto en hover */
-    background-color: #4741d7; /* Fondo en hover */
+    color: #ffffff; 
+    background-color: #4741d7; 
 }
 
 .btn-close::after {
     content: "";
-    background: #4741d7; /* Fondo del hover */
+    background: #4741d7; 
     position: absolute;
     z-index: -1;
     padding: 16px 20px;
@@ -290,13 +289,12 @@ input:focus {
 
 .btn-close:hover::after {
     transition: all 0.3s ease-out;
-    transform: scale(1, 1) rotate(0deg); /* Efecto de expansión y rotación */
+    transform: scale(1, 1) rotate(0deg); 
 }
 
 
-/* Ajustar el contenido del sitio para que no quede cubierto por el menú fijo */
 main {
-    padding-top: 60px; /* Asegura que el contenido no quede debajo de la barra fija */
+    padding-top: 60px; 
 }
 
 
@@ -350,9 +348,9 @@ main {
 .editable-field {
     background-color: transparent;
     padding: 5px;
-    border: none transparent; /* Elimina el borde */
+    border: none transparent; 
     border-style: none;
-    outline:  none; /* Elimina el borde cuando el campo está enfocado */
+    outline:  none; 
     appearance: none;
     width: 100%;
     color: white;
@@ -446,7 +444,7 @@ main {
 
 .social-btn {
     color: rgb(5, 5, 5);
-    background-color: #3b5998; /* Color de fondo para Facebook */
+    background-color: #3b5998; 
     padding: 10px 15px;
     border-radius: 5px;
     text-decoration: none;
@@ -462,15 +460,15 @@ main {
 }
 
 .social-btn:hover {
-    background-color: #1d305f; /* Color más oscuro para hover */
+    background-color: #1d305f; 
 }
 
 .social-btn:nth-child(2) {
-    background-color: #E1306C; /* Color de fondo para Instagram */
+    background-color: #E1306C; 
 }
 
 .social-btn:nth-child(2):hover {
-    background-color: #a3204e; /* Color más oscuro para hover en Instagram */
+    background-color: #a3204e; 
 }
 
 /*estilos para rutas de VIAJES*/
@@ -587,15 +585,15 @@ main {
   #form-container button:hover {
     border-top-right-radius: 0px;
     border-bottom-left-radius: 0px;
-    background: rgba(0, 0, 0, 0.863); /* Fondo más oscuro */
-    color: rgb(255, 255, 255); /* Cambiar el color del texto */
+    background: rgba(0, 0, 0, 0.863); 
+    color: rgb(255, 255, 255); 
   }
   
   #form-container button:hover:before,
   #form-container button:hover:after {
     width: 100%;
     height: 100%;
-    border-color: white; /* Cambiar el color de las esquinas */
+    border-color: white; 
   }
 
 
@@ -669,19 +667,19 @@ main {
 /* Medias Query para pantallas más pequeñas */
 @media (max-width: 768px) {
     body {
-        padding: 10px; /* Reducir el padding en pantallas más pequeñas */
+        padding: 10px; 
     }
 
     h1,h3 {
-        font-size: 1.5rem; /* Ajustar el tamaño del título */
+        font-size: 1.5rem;
     }
 
     form {
-        padding: 1.5rem; /* Reducir el padding del formulario */
+        padding: 1.5rem; 
     }
 
     #registrar {
-        font-size: 0.9rem; /* Reducir el tamaño del botón */
+        font-size: 0.9rem; 
         top: 10px;
         right: 10px;
     }
@@ -697,7 +695,7 @@ main {
     }
 
     form {
-        width: 100%; /* El formulario ocupará toda la pantalla en móviles */
+        width: 100%; 
         max-width: 100%;
         padding: 1rem;
     }

@@ -12,7 +12,3 @@ Las presentes sentencias serviran para ejecutar con exito el sistema de argos :)
 
 
 
-nota T_T: En un entorno de servidor como Node.js, el uso de localStorage no es posible, ya que es específico para el almacenamiento 
-local en navegadores web. Esto significa que localStorage no funcionará para guardar información de usuarios en el lado del servidor.
- En su lugar, se uso un archivo JSON en el servidor para almacenar los usuarios. Anteriormente se habia especificado el uso de una 
- base de datos pero por cuestiones de tiempo se decidio cambiar esta opcion.
