@@ -2,142 +2,110 @@
 
 // Usuario de prueba (almacenado en localStorage)
 const usuarioPrueba = {
-    email: "Cronos01@gmail.com",
-    password: "Tiempo"
+  email: "Cronos01@gmail.com",
+  password: "Tiempo"
 };
-
 
 // Función para mostrar alertas
 function showAlert(message, type) {
-    const alert = document.getElementById('alert');
-    alert.textContent = message;
-    alert.className = `alert ${type === 'success' ? 'alert-success' : 'alert-error'}`;
-    alert.style.display = 'block';
-    
-    // Ocultar la alerta después de 3 segundos
-    setTimeout(() => {
-        alert.style.display = 'none';
-    }, 3000);
+  const alert = document.getElementById('alert');
+  alert.textContent = message;
+  alert.className = `alert ${type === 'success' ? 'alert-success' : 'alert-error'}`;
+  alert.style.display = 'block';
+
+  // Ocultar la alerta después de 3 segundos
+  setTimeout(() => {
+      alert.style.display = 'none';
+  }, 3000);
+}
+
+// Función para autenticar el usuario
+function autenticarUsuario(email, password) {
+  // Verificar si el usuario de prueba coincide
+  if (email === usuarioPrueba.email && password === usuarioPrueba.password) {
+      return { success: true, message: 'Inicio de sesión exitoso (usuario de prueba).' };
+  }
+
+  // Verificar en LocalStorage si el usuario está registrado
+  const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
+  const usuario = usuarios.find(usuario => usuario.email === email && usuario.password === password);
+
+  if (usuario) {
+      return { success: true, message: 'Inicio de sesión exitoso.' };
+  }
+
+  return { success: false, message: 'Credenciales incorrectas.' };
 }
 
 // Evento para manejar el formulario de inicio de sesión
 document.getElementById('formLogin').addEventListener('submit', function (e) {
-    e.preventDefault();
+  e.preventDefault();
 
-    const email = document.getElementById('loginEmail').value;
-    const password = document.getElementById('loginPassword').value;
+  const email = document.getElementById('loginEmail').value;
+  const password = document.getElementById('loginPassword').value;
 
-    // Simulación del proceso de autenticación
-    if (email === usuarioPrueba.email && password === usuarioPrueba.password) {
-        showAlert('Inicio de sesión exitoso.', 'success');
-        setTimeout(() => window.location.href = '/home', 1000);   
-    } else {
-        // Verificar en LocalStorage si el usuario está registrado
-        const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-        const usuario = usuarios.find(usuario => usuario.email === email && usuario.password === password);
-        if (usuario) {
-            showAlert('Inicio de sesión exitoso.', 'success');
-            setTimeout(() => window.location.href = '/home', 1000);
-        } else {
-            showAlert('Credenciales incorrectas.', 'error');
-        }
-    }
+  const { success, message } = autenticarUsuario(email, password);
+
+  if (success) {
+      showAlert(message, 'success');
+      setTimeout(() => window.location.href = '/home', 1000);
+  } else {
+      showAlert(message, 'error');
+  }
 });
 
 // Evento para mostrar/ocultar contraseña
 document.getElementById('togglePassword').addEventListener('click', function () {
-    const passwordField = document.getElementById('loginPassword');
-    const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
-    passwordField.setAttribute('type', type);
+  const passwordField = document.getElementById('loginPassword');
+  const type = passwordField.getAttribute('type') === 'password' ? 'text' : 'password';
+  passwordField.setAttribute('type', type);
 
-    // Cambiar el ícono de "ojito"
-    this.textContent = type === 'password' ? '👁️' : '🙈';
+  // Cambiar el ícono de "ojito"
+  this.textContent = type === 'password' ? '👁️' : '🙈';
 });
 
-// Función para registrar un usuario y redirigir si es exitoso
-document.getElementById("formRegistro").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const nombre = document.getElementById("nombre").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    registrarUsuario(nombre, email, password);
-});
+/*  >_< ALL NICE HERE*/
 
-function registrarUsuario(nombre, email, password) {
-    fetch('/registrar', {
-        method: 'POST',
-        headers: {
-            'Content-Type': 'application/json',
-        },
-        body: JSON.stringify({ nombre, email, password }),
+/*AQUI COMIENZA LOS EVENTOS PARA REGISTRO DE USUARIO*/ 
+
+document.getElementById('formLogin').addEventListener('submit', function (e) {
+  e.preventDefault();
+
+  const email = document.getElementById('email').value;
+  const password = document.getElementById('password').value;
+
+  // Enviar las credenciales al backend
+  fetch('/login', {
+    method: 'POST',
+    headers: {
+      'Content-Type': 'application/json',
+    },
+    body: JSON.stringify({
+      email: email,
+      password: password
     })
-    .then(response => response.json())
-    .then(data => {
-        if (data.mensaje === "Este correo ya está registrado.") {
-            showAlert(data.mensaje, 'error');
-        } else {
-            showAlert(data.mensaje, 'success');
-            setTimeout(() => window.location.href = data.redirigir, 1000);
-        }
-    })
-    .catch(error => {
-        console.error('Error:', error);
-    });
-}
-
-function showAlert(message, type) {
-    const alert = document.getElementById('alert');
-    alert.textContent = message;
-    alert.className = `alert ${type === 'success' ? 'alert-success' : 'alert-error'}`;
-    alert.style.display = 'block';
-
-    setTimeout(() => {
-        alert.style.display = 'none';
-    }, 3000);
-}
-
-
-
-// Función para iniciar sesión
-function iniciarSesion(email, password) {
-    const usuarios = JSON.parse(localStorage.getItem("usuarios")) || [];
-
-    const usuario = usuarios.find(usuario => usuario.email === email && usuario.password === password);
-    if (usuario) {
-        alert("Inicio de sesión exitoso");
-        localStorage.setItem("usuarioActivo", JSON.stringify(usuario));
+  })
+  .then(response => response.json())
+  .then(data => {
+    if (data.mensaje === 'Login exitoso') {
+      // Redirigir al home si el login es exitoso
+      window.location.href = '/home';
     } else {
-        alert("Correo o contraseña incorrectos");
+      // Mostrar error de login
+      document.getElementById('alert').innerText = data.mensaje;
+      document.getElementById('alert').style.display = 'block';
     }
-}
-
-
-// Evento para manejar el formulario de registro
-document.getElementById("formRegistro").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const nombre = document.getElementById("nombre").value;
-    const email = document.getElementById("email").value;
-    const password = document.getElementById("password").value;
-    registrarUsuario(nombre, email, password);
+  })
+  .catch(error => {
+    console.error('Error en la solicitud:', error);
+  });
 });
 
-// Event listener para el formulario de inicio de sesión
-document.getElementById("formLogin").addEventListener("submit", function (e) {
-    e.preventDefault();
-    const email = document.getElementById("loginEmail").value;
-    const password = document.getElementById("loginPassword").value;
-    iniciarSesion(email, password);
-});
 
-// Evento para el formulario de registro
-document.getElementById('formRegister')?.addEventListener('submit', function (e) {
-    e.preventDefault();
 
-    // Simulación de registro exitoso
-    showAlert('Registro exitoso.', 'success');
-    setTimeout(() => window.location.href = '/home', 1000);
-});
 
+
+//EVENTOS DE LA PAGINA PERFIL 
 // Muestra una vista previa de la imagen seleccionada
 function previewImage(event) {
     const reader = new FileReader();
